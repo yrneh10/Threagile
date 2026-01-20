@@ -22,4 +22,4 @@ jobs:
 
       - name: Run Threagile in Docker container
         run: |
-          docker run -d -p 8080:8080 threagile:latest
+            docker run --rm -it threagile/threagile --help
