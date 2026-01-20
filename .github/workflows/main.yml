@@ -1,0 +1,29 @@
+name: Run Threagile Docker in GitHub Actions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  threagile_analysis:
+    runs-on: ubuntu-latest
+    services:
+      docker:
+        image: docker:19.03.12
+        options: --privileged
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Threagile Docker image
+        run: |
+          docker build -t threagile:latest .
+
+      - name: Run Threagile in Docker container
+        run: |
+          docker run -d -p 8080:8080 threagile:latest
