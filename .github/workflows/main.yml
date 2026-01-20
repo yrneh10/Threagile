@@ -22,7 +22,7 @@ jobs:
 
       - name: Build Threagile Docker image
         run: |
-          docker build -t threagile:latest .
+          docker build -t threagile:latest 
 
       - name: Run Threagile in Docker container
         run: |
