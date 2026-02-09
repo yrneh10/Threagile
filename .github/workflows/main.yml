@@ -19,4 +19,4 @@ jobs:
 
       - name: Run Threagile in Docker container
         run: |
-            docker run --rm threagile/threagile --help
+            docker run --rm -it -v "$(pwd)":/app/work threagile/threagile -verbose -model /app/work/threagile-example-model.yamll -output /app/work
