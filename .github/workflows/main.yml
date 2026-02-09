@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v3
+      - name: Create Threagile output directory
+        run: mkdir -p threagile-output
 
       - name: Run Threagile in Docker container
         run: |
@@ -25,7 +27,7 @@ jobs:
             threagile/threagile \
             -verbose \
             -model /app/work/threagile-example-model.yaml \
-            -output /app/work
+            -output /app/work/threagile-output
 
       - name: List workspace files
         run: ls -la            
