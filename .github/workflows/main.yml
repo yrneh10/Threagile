@@ -27,3 +27,6 @@ jobs:
             -model /app/work/threagile-example-model.yaml \
             -output /app/work
 
+      - uses: actions/upload-artifact@v4
+
+
