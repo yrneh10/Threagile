@@ -27,6 +27,9 @@ jobs:
             -model /app/work/threagile-example-model.yaml \
             -output /app/work
 
+      - name: List workspace files
+        run: ls -la            
+
       - uses: actions/upload-artifact@v4
 
 
