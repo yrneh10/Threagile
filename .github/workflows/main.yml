@@ -32,6 +32,10 @@ jobs:
       - name: List workspace files
         run: ls -la threagile-output          
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload Threagile output
+        uses: actions/upload-artifact@v4
+        with:
+          name: threagile-output
+          path: threagile-output/
 
 
